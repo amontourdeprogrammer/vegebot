@@ -16,8 +16,7 @@ app.get('/cool', function(request, response) {
 });
 
 app.get('/sexyveg', function(request, response){
-		response.send("https://www.bbcgoodfood.com/search/recipes?query=Vegan+" + request);
-		
+		response.send(request);
 		});
 
 app.get('/', function(request, response) {
