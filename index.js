@@ -16,8 +16,9 @@ app.get('/cool', function(request, response) {
 });
 
 app.get('/sexyveg', function(request, response){
+		var ingredient = request;
 		response.send("request");
-		console.log("request")
+		console.log(ingredient.path);
 		});
 
 app.get('/', function(request, response) {
