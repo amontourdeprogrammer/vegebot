@@ -17,7 +17,7 @@ app.get('/cool', function(request, response) {
 
 app.get('/sexyveg', function(request, response){
 		response.send("request");
-		
+		console.log("request")
 		});
 
 app.get('/', function(request, response) {
