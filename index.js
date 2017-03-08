@@ -15,10 +15,20 @@ app.get('/cool', function(request, response) {
 	response.send(cool());
 });
 
+// route: Route { path: '/sexyveg', stack: [ [Object] ], methods: { get: true } } }
+// The get method :
+///test/demo_form.php?name1=value1&name2=value2
+
+// The post method
+/// POST /test/demo_form.php HTTP/1.1
+///Host: w3schools.com
+///name1=value1&name2=value2
+
 app.get('/sexyveg', function(request, response){
-		var ingredient = request;
-		response.send("request");
-		console.log(ingredient.path);
+    	var id = request.query.id;
+    //further operations to perform
+		response.send("request " + id);
+		console.log(id);
 		});
 
 app.get('/', function(request, response) {
