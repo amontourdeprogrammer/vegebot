@@ -1,6 +1,12 @@
 VegeBot is a bot that gives vegeterian recipes when  through an ingredient 
 The prompt : /command on slack called sexyveg with a POST method (go to slack's Apps & Intregrations/Custom Integration/Slash Commands to set it up)
 
+Right Now, I am testing a tutorial http://www.girliemac.com/blog/2016/10/24/slack-command-bot-nodejs/
+I use Ngork to create a URL with my local host to put in slack
+If /sexyveg 302 --> image
+
+
+
 How to install
 
 1. Make sure you have [Node.js](http://nodejs.org/) and the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) installed. 

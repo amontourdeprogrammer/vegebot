@@ -1,42 +1,36 @@
-var cool = require('cool-ascii-faces');
-var express = require('express');
-var app = express();
+'use strict';
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
+const server = app.listen(3000, () => {  
+  console.log('Express server listening on port %d in %s mode', server.address().port, app.settings.env);});
 
-app.set('port', (process.env.PORT || 3000));
+// Now, create HTTP POST route method to handle the command:
 
-app.use(express.static(__dirname + '/public'));
+app.post('/', (req, res) => {
+	let text = req.body.text;
+	// implement your bot here ...
 
-// views is directory for all template files
-app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
+	// Error Handling
+	if(! /^\d+$/.test(text)) { // not a digit
+    res.send('U R DOIN IT WRONG. Enter a status code like 200!');
+    return;
+    }
+    //302 case handling
+    let data = {
+        response_type: 'in_channel', // public to the channel
+        text: '302: Found',
+         attachments:[
+            {
+            image_url: 'https://http.cat/302.jpg'
+            }
+	    ]};
 
-app.get('/cool', function(request, response) {
-	response.send(cool());
+    res.json(data);
+    
+
 });
-
-// route: Route { path: '/sexyveg', stack: [ [Object] ], methods: { get: true } } }
-// The get method :
-///test/demo_form.php?name1=value1&name2=value2
-
-// The post method
-/// POST /test/demo_form.php HTTP/1.1
-///Host: w3schools.com
-///name1=value1&name2=value2
-
-app.get('/sexyveg', function(request, response){
-    	var id = request.query.id;
-    //further operations to perform
-		response.send("request " + id);
-		console.log(id);
-		});
-
-app.get('/', function(request, response) {
-  response.render('pages/index');
-});
-
-app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
-});
-
 
