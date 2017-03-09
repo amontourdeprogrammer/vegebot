@@ -11,24 +11,28 @@ const server = app.listen(3000, () => {
 // Now, create HTTP POST route method to handle the command:
 
 app.post('/', (req, res) => {
-	let text = req.body.text;
+	let code = req.body.text;
 	// implement your bot here ...
 
 	// Error Handling
-	if(! /^\d+$/.test(text)) { // not a digit
+	if(! /^\d+$/.test(code)) { // not a digit
     res.send('U R DOIN IT WRONG. Enter a status code like 200!');
     return;
     }
     //302 case handling
+    let image = 'https://http.cat/' + code;
     let data = {
         response_type: 'in_channel', // public to the channel
-        text: '302: Found',
+        text: 'This is ' + code,
          attachments:[
             {
-            image_url: 'https://http.cat/302.jpg'
+            image_url: image,
+            title: "Slack API Documentation",
+            title_link: "https://api.slack.com/"
             }
 	    ]};
 
+	console.log(code)
     res.json(data);
     
 

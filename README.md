@@ -3,7 +3,13 @@ The prompt : /command on slack called sexyveg with a POST method (go to slack's 
 
 Right Now, I am testing a tutorial http://www.girliemac.com/blog/2016/10/24/slack-command-bot-nodejs/
 I use Ngork to create a URL with my local host to put in slack
-If /sexyveg 302 --> image
+If /sexyveg + http code --> image
+
+How to install locally
+1. run npm install
+2. run ./ngork http 3000
+3. Copy/paste the ngork url in the slack intergration page
+4. run node index.js
 
 
 
