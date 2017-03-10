@@ -23,6 +23,7 @@ app.post('/', (req, res) => {
     let data = {
         response_type: 'in_channel', // public to the channel
         text: 'This is a recipe with ' + ingredient,
+        //!!! Slack message attachment styling
         attachments:[
             {
             title: "Click here to see your recipe",
