@@ -11,30 +11,25 @@ const server = app.listen(3000, () => {
 // Now, create HTTP POST route method to handle the command:
 
 app.post('/', (req, res) => {
-	let code = req.body.text;
+	let ingredient = req.body.text;
 	// implement your bot here ...
 
 	// Error Handling
-	if(! /^\d+$/.test(code)) { // not a digit
-    res.send('U R DOIN IT WRONG. Enter a status code like 200!');
+	if(! /^[a-z]+$/.test(ingredient)) { // not a digit
+    res.send('Ooopss! I believe that is not an ingredient');
     return;
     }
-    //302 case handling
-    let image = 'https://http.cat/' + code;
+    let recipe = 'https://www.bbcgoodfood.com/search/recipes?query=Vegan+' + ingredient;
     let data = {
         response_type: 'in_channel', // public to the channel
-        text: 'This is ' + code,
-         attachments:[
+        text: 'This is a recipe with ' + ingredient,
+        attachments:[
             {
-            image_url: image,
-            title: "Slack API Documentation",
-            title_link: "https://api.slack.com/"
+            title: "Click here to see your recipe",
+            title_link: recipe
             }
 	    ]};
-
-	console.log(code)
+    console.log(recipe);
     res.json(data);
-    
-
 });
 
