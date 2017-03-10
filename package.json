@@ -1,33 +1,24 @@
 {
-  "name": "node-js-getting-started",
-  "version": "0.2.5",
-  "description": "A sample Node.js app using Express 4",
-  "engines": {
-    "node": "5.9.1"
-  },
+  "name": "vegebot",
+  "version": "1.0.0",
+  "description": "VegeBot is a bot that gives vegeterian recipes when  through an ingredient  The prompt : /command on slack called sexyveg with a POST method (go to slack's Apps & Intregrations/Custom Integration/Slash Commands to set it up)",
   "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
-  },
   "dependencies": {
-    "cool-ascii-faces": "1.3.4",
-    "ejs": "2.4.1",
-    "express": "4.13.3",
-    "pg": "^6.1.3"
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/heroku/node-js-getting-started.git"
+    "url": "git+https://github.com/amontourdeprogrammer/vegebot.git"
   },
-  "keywords": [
-    "node",
-    "heroku",
-    "express"
-  ],
-  "license": "MIT",
+  "author": "",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/heroku/node-js-getting-started/issues"
+    "url": "https://github.com/amontourdeprogrammer/vegebot/issues"
   },
-  "homepage": "https://github.com/heroku/node-js-getting-started#readme",
-  "author": ""
+  "homepage": "https://github.com/amontourdeprogrammer/vegebot#readme"
 }
