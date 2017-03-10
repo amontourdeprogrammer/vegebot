@@ -26,10 +26,11 @@ app.post('/', (req, res) => {
         //!!! Slack message attachment styling
         attachments:[
             {
-            title: "Click here to see your recipe",
-            title_link: recipe
+            	title: "Here is the list of delicious "+ingredient+" vegan recipe!!",
+		title_link: recipe,
+	     	image_url : "https://image.spreadshirtmedia.com/image-server/v1/compositions/1007656294/views/1,width=300,height=300,version=1441637262/apeeling-vegan-t-shirts-men-s-organic-t-shirt.jpg"
             }
-	    ]};
+	]};
     console.log(recipe);
     res.json(data);
 });
